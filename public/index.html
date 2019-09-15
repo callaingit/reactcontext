@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Sample React App - Context</title>
+    </head>
+    <body>
+        <div id="appRoot"></div>        
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="./lib/Log.js"></script>
+        <script src="./lib/AppContext.js"></script>
+        <script src="./lib/App.js"></script>
+        <script src="./lib/GrandFather.js"></script>
+        <script src="./lib/Father.js"></script>
+        <script src="./lib/Child.js"></script>
+        <script>
+
+window.addEventListener('load', function(e) {
+
+  const appRootNode = document.getElementById('appRoot');
+
+  let theApp = ReactDOM.render(React.createElement(App, {drillProp1: "world"}), appRootNode)
+
+  setTimeout(
+    () => { console.log("assigning propa")
+            theApp.setState({appProp1: 1002})
+          }
+  , 3000)
+
+})
+        </script>
+    </body>
+</html>
