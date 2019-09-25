@@ -7,6 +7,7 @@ class Father extends React.Component {
         <React.Fragment>
           <Log info="in Father" />
           <Child drillProp1={this.props.drillProp1}></Child>
+          <UseContextHook/>
         </React.Fragment>
       )
     }

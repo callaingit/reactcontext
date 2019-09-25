@@ -3,6 +3,7 @@ class GrandFather extends React.Component {
       super(props)
     }
     render() {
+      console.log("in GrandFather.render()")
       return(
         <React.Fragment>
           <Log info="in GrandFather" />

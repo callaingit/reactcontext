@@ -10,6 +10,8 @@
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
         <script src="./lib/Log.js"></script>
         <script src="./lib/AppContext.js"></script>
+        <script src="./lib/UseContextHook.js"></script>
+        <script src="./lib/MyAppContextProvider.js"></script>
         <script src="./lib/App.js"></script>
         <script src="./lib/GrandFather.js"></script>
         <script src="./lib/Father.js"></script>
@@ -22,11 +24,13 @@ window.addEventListener('load', function(e) {
 
   let theApp = ReactDOM.render(React.createElement(App, {drillProp1: "world"}), appRootNode)
 
+  console.log('Preparing app rerender...')
+
   setTimeout(
-    () => { console.log("assigning propa")
-            theApp.setState({appProp1: 1002})
-          }
-  , 3000)
+        () => { console.log("asking re-render() on app")
+                ReactDOM.render(React.createElement(App, {drillProp1: "world"}), appRootNode)
+              }
+      , 7000)    
 
 })
         </script>
